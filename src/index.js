@@ -12,3 +12,36 @@ export function capitalize(str) {
 function isCharLetter(firstChar) {
   return firstChar.toLowerCase() !== firstChar.toUpperCase();
 }
+
+export function reverse(x) {
+  let str = x.toString();
+  let xStringReversed = "";
+  let i = str.length - 1;
+  while (i >= 0) {
+    xStringReversed += str.substring(i, i + 1);
+    i--;
+  }
+  return xStringReversed;
+}
+
+export default class Calculator {
+  add(a, b) {
+    let result = a + b;
+    return result;
+  }
+
+  subtract(a, b) {
+    let result = a - b;
+    return result;
+  }
+
+  multiply(a, b) {
+    let result = a * b;
+    return result;
+  }
+
+  divide(a, b) {
+    let result = a / b;
+    return result;
+  }
+}
