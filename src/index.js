@@ -45,3 +45,23 @@ export default class Calculator {
     return result;
   }
 }
+
+export function caesarCipher(strPlain, key) {
+  debugger;
+  let result = [];
+  for (let i = 0; i < strPlain.length; i++) {
+    let code = strPlain.charCodeAt(i);
+    let toCheck = String.fromCharCode(code);
+    if (isCharLetter(toCheck)) {
+      code = strPlain.charCodeAt(i) + key;
+      while (code > 122) {
+        code = code - 122 + 96;
+      }
+      result.push(String.fromCharCode(code));
+      console.log(result);
+    } else {
+      result.push(String.fromCharCode(code));
+    }
+  }
+  return result.join("");
+}

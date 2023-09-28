@@ -1,4 +1,4 @@
-import Calculator, { capitalize, reverse, calculator } from "./index.js";
+import Calculator, { capitalize, reverse, caesarCipher } from "./index.js";
 // capitalize tests
 test("Capitalizing the first letter", () => {
   expect(capitalize("hi mom")).toBe("Hi mom");
@@ -46,4 +46,18 @@ test("multiply", () => {
 test("divide", () => {
   const calculator = new Calculator();
   expect(calculator.divide(9, 3)).toBe(3);
+});
+// caesar cipher tests
+test("Caesar cipher, test 1", () => {
+  expect(caesarCipher("defend the east wall of the castle", 1)).toBe(
+    "efgfoe uif fbtu xbmm pg uif dbtumf"
+  );
+});
+
+test("Caesar cipher, test 2", () => {
+  expect(caesarCipher("Hi mom", 3)).toBe("Kl prp");
+});
+
+test("Caesar cipher, test 3", () => {
+  expect(caesarCipher("!hi mom666", 7)).toBe("!op tvt666");
 });
